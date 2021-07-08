@@ -1,0 +1,39 @@
+.content {
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
+    padding-top: 20px;
+    color: white;
+}
+
+.content > img {
+    max-width: 100%;
+}
+
+.content > h5 {
+    padding: 15px;
+}
+
+.header {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.feedback {
+    display: flex;
+    align-items: center;
+}
+
+.flex > h5 {
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.flex {
+    margin-left: 15px;
+    display: flex;
+    align-items: center;
+}

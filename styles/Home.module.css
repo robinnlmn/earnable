@@ -1,3 +1,54 @@
 .main {
   background-color: var(--main-bg-color);
+  display: grid; 
+  grid-template-columns: 30% 40% 30fr; 
+  grid-template-rows: 1fr; 
+  grid-template-areas: 
+    ". . ."; 
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  margin: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: var(--main-bg-color);
+}
+
+.button:hover {
+  background-color: var(--main-ui-color);
+}
+
+.button > h3 {
+  color: var(--main-red);
+  margin-left: 15px;
+}
+
+.icon {
+  color: var(--main-red);
+}
+
+/* LEFT */
+
+.left {
+  border-right: 1px solid darkgray;
+}
+
+/* MIDDLE */
+
+.middle {
+  display: grid; 
+  grid-template-columns: 100%; 
+  grid-template-rows: 1fr 1fr; 
+  gap: 10px 10px; 
+  grid-template-areas: 
+    "."
+    "."; 
+}
+
+/* RIGHT */
+
+.right {
+  border-left: 1px solid darkgray;
 }
