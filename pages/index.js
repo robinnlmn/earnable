@@ -2,12 +2,14 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Button from '@material-ui/core/Button'
+import Input from '@material-ui/core/Input'
 
 import Post from '../components/Post'
+import Recommend from '../components/Recommend'
 
-import HomeIcon from '@material-ui/icons/Home';
-import AccountIcon from '@material-ui/icons/AccountCircle';
-import LogoutIcon from '@material-ui/icons/ExitToApp';
+import HomeIcon from '@material-ui/icons/Home'
+import AccountIcon from '@material-ui/icons/AccountCircle'
+import LogoutIcon from '@material-ui/icons/ExitToApp'
 
 export default function Home() {
   return (
@@ -66,7 +68,13 @@ export default function Home() {
         </div>
 
         <div className={styles.right}>
-          YOU CAN SEE WHO YOU ARE FOLLOWING
+          <div className={styles.search}>
+            <Input className={styles.searchInput} placeholder="Username" />
+          </div>
+
+          <div className={styles.recommendation}>
+            <Recommend name="earnable" profileimg="https://cdn.discordapp.com/attachments/843795547704786966/863082845257072643/pO3THdxA_400x400.jpg" />
+          </div>
         </div>
       </main>
     </div>

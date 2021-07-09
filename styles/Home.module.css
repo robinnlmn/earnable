@@ -53,6 +53,37 @@
 
 }
 
+.search {
+  background-color: var(--main-ui-color);
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 15px;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.searchInput {
+  padding: 5px;
+  width: 80%;
+}
+
+.searchInput > input{
+  color: var(--main-red);
+}
+
+.recommendation {
+  background-color: var(--main-ui-color);
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 15px;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+}
+
 /* MOBILE */
 
 @media screen and (max-width:988px) {
