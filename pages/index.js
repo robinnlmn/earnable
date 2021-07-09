@@ -43,7 +43,7 @@ export default function Home() {
             desc="This is a description This is a description This is a description This is a description This is a description This is a description"
             likes="1512"
             reposts="45"
-            img="https://i.pinimg.com/564x/8e/d9/b2/8ed9b2fbc6f2135fbbb844cc0604f721.jpg"
+            img="https://hugobeckhaus.de/wp-content/uploads/2020/11/landscape-mountains-sky-4843193.jpg"
           />
 
           <Post

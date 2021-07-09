@@ -1,7 +1,7 @@
 .main {
   background-color: var(--main-bg-color);
   display: grid; 
-  grid-template-columns: 30% 40% 30fr; 
+  grid-template-columns: 30% 40% 30%; 
   grid-template-rows: 1fr; 
   grid-template-areas: 
     ". . ."; 
@@ -32,7 +32,7 @@
 /* LEFT */
 
 .left {
-  border-right: 1px solid darkgray;
+  
 }
 
 /* MIDDLE */
@@ -50,5 +50,22 @@
 /* RIGHT */
 
 .right {
-  border-left: 1px solid darkgray;
+
+}
+
+/* MOBILE */
+
+@media screen and (max-width:988px) {
+  .main {
+    background-color: var(--main-bg-color);
+    display: grid; 
+    grid-template-columns: 30% 65% 5%; 
+    grid-template-rows: 1fr; 
+    grid-template-areas: 
+      ". . ."; 
+  }
+
+  .right {
+    display: none;
+  }
 }
