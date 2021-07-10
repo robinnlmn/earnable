@@ -7,6 +7,7 @@ import Input from '@material-ui/core/Input'
 import Post from '../components/Post'
 import Recommend from '../components/Recommend'
 
+import Logo from '../public/large.png'
 import HomeIcon from '@material-ui/icons/Home'
 import AccountIcon from '@material-ui/icons/AccountCircle'
 import LogoutIcon from '@material-ui/icons/ExitToApp'
@@ -22,6 +23,8 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.left}>
+          <Image src={Logo} alt="Logo" width="100%" height="100%" />
+
           <div className={styles.button}>
             <HomeIcon className={styles.icon} />
             <h3>HOME</h3>
