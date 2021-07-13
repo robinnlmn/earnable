@@ -3,16 +3,25 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Button from '@material-ui/core/Button'
 import Input from '@material-ui/core/Input'
+import { useRouter } from 'next/router'
 
 import Post from '../components/Post'
 import Recommend from '../components/Recommend'
 
-import Logo from '../public/large.png'
+import Logo from '../public/favicon.png'
 import HomeIcon from '@material-ui/icons/Home'
 import AccountIcon from '@material-ui/icons/AccountCircle'
 import LogoutIcon from '@material-ui/icons/ExitToApp'
 
 export default function Home() {
+  const router = useRouter()
+
+  const handleClick = (e, path) => {
+    e.preventDefault()
+
+    router.push(path)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -22,20 +31,28 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.left}>
-          <Image src={Logo} alt="Logo" width="100%" height="100%" />
+        <div className={styles.header}>
+          <div className={styles.hamburger}>
+            <div className={styles.hamburgerRow}></div>
+            <div className={styles.hamburgerRow}></div>
+            <div className={styles.hamburgerRow}></div>
+          </div>
 
-          <div className={styles.button}>
+          <Image src={Logo} width="80%" height="80%" className={styles.logo} />
+        </div>
+
+        <div className={styles.left}>
+          <div className={styles.button} onClick={(e) => handleClick(e, "/")}>
             <HomeIcon className={styles.icon} />
             <h3>HOME</h3>
           </div>
 
-          <div className={styles.button}>
+          <div className={styles.button} onClick={(e) => handleClick(e, "/profile")}>
             <AccountIcon className={styles.icon} />
             <h3>PROFILE</h3>
           </div>
 
-          <div className={styles.button}>
+          <div className={styles.button} onClick={(e) => handleClick(e, "/logout")}>
             <LogoutIcon className={styles.icon} />
             <h3>LOGOUT</h3>
           </div>
