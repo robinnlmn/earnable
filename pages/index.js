@@ -12,6 +12,7 @@ import Logo from '../public/favicon.png'
 import HomeIcon from '@material-ui/icons/Home'
 import AccountIcon from '@material-ui/icons/AccountCircle'
 import LogoutIcon from '@material-ui/icons/ExitToApp'
+import QuitIcon from '@material-ui/icons/Clear';
 
 export default function Home() {
   const router = useRouter()
@@ -20,6 +21,10 @@ export default function Home() {
     e.preventDefault()
 
     router.push(path)
+  }
+
+  const openOptions = (e) => {
+
   }
 
   return (
@@ -31,11 +36,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.header}>
-          <div className={styles.hamburger}>
-            <div className={styles.hamburgerRow}></div>
-            <div className={styles.hamburgerRow}></div>
-            <div className={styles.hamburgerRow}></div>
+        <div className={styles.header} id="header">
+          <div className={styles.hamburger} onClick={openOptions}>
+            <div className={styles.hamburgerRow1}></div>
+            <div className={styles.hamburgerRow2}></div>
+            <div className={styles.hamburgerRow3}></div>
           </div>
 
           <Image src={Logo} width="80%" height="80%" className={styles.logo} />
@@ -58,7 +63,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.middle}>
+        <div className={styles.middle} id="middle">
           <Post
             title="TEST"
             author="EARNABLE"

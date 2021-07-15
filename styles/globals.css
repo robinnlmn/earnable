@@ -15,7 +15,7 @@ a {
   box-sizing: border-box;
   font-weight: 700;
 
-  --main-bg-color: #0A0A0A;
-  --main-ui-color: #1A1E23;
-  --main-red: #FD4D4D;
+  --main-bg-color: hsl(0, 0%, 4%);
+  --main-ui-color: hsl(213, 15%, 12%);
+  --main-red: hsl(0, 98%, 65%);
 }

@@ -87,7 +87,7 @@
 /* HEADER */
 
 .header {
-  height: 70px;
+  height: 80px;
   margin: 0;
 
   display: flex;
@@ -101,7 +101,39 @@
   margin-left: 15px;
 }
 
-.hamburgerRow {
+.hamburger:active .hamburgerRow1 {
+  transform: rotate(360deg);
+}
+
+.hamburger:active .hamburgerRow2 {
+  transform: rotate(-360deg);
+}
+
+.hamburger:active .hamburgerRow3 {
+  transform: rotate(360deg);
+}
+
+.hamburgerRow1 {
+  transition: 1s;
+  width: 35px;
+  height: 5px;
+  border-radius: 25px;
+  margin: 6px 0px;
+  background-color: white;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.22);
+}
+
+.hamburgerRow2 {
+  transition: 1s;
+  width: 35px;
+  height: 5px;
+  border-radius: 25px;
+  margin: 6px 0px;
+  background-color: white;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.22);
+}
+
+.hamburgerRow3 {
   transition: 1s;
   width: 35px;
   height: 5px;
@@ -142,7 +174,7 @@
   }
 
   .header {
-    height: 70px;
+    height: 80px;
     margin: 0;
 
     display: flex;
