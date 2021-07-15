@@ -1,6 +1,7 @@
 {
   "name": "earnable",
-  "version": "0.1.0",
+  "author": "chomeable",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
