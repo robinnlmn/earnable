@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
@@ -12,10 +13,10 @@ import Logo from '../public/favicon.png'
 import HomeIcon from '@material-ui/icons/Home'
 import AccountIcon from '@material-ui/icons/AccountCircle'
 import LogoutIcon from '@material-ui/icons/ExitToApp'
-import QuitIcon from '@material-ui/icons/Clear';
 
 export default function Home() {
   const router = useRouter()
+  const [options, setOptions] = useState(false)
 
   const handleClick = (e, path) => {
     e.preventDefault()
@@ -23,14 +24,58 @@ export default function Home() {
     router.push(path)
   }
 
-  const openOptions = (e) => {
+  const handleResize = () => {
+    if (window.innerWidth >= 754) {
+      document.getElementById("options").style.display = "none"
+    }
+  }
 
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+  })
+
+  const openOptions = (e) => {
+    if (options == false) {
+      document.getElementById("options").style.display = "flex"
+      setOptions(true)
+    }
+    else {
+      document.getElementById("options").style.display = "none"
+      setOptions(false)
+    }
+  }
+
+  function openPopupPage(relativeUrl) {
+    var param = {};
+    OpenWindowWithPost(relativeUrl, "width=400, height=550, left=200, top=50, resizable=no, scrollbars=yes", "NewFile", param);
+  }
+
+  function OpenWindowWithPost(url, windowoption, name, params) {
+    var form = document.createElement("form");
+    form.setAttribute("method", "post");
+    form.setAttribute("action", url);
+    form.setAttribute("target", name);
+    for (var i in params) {
+      if (params.hasOwnProperty(i)) {
+        var input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = i;
+        input.value = params[i];
+        form.appendChild(input);
+      }
+    }
+    document.body.appendChild(form);
+    //note I am using a post.htm page since I did not want to make double request to the page 
+    //it might have some Page_Load call which might screw things up.
+    window.open("post.htm", name, windowoption);
+    form.submit();
+    document.body.removeChild(form);
   }
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>Earnable</title>
+        <title>EARNABLE</title>
         <meta name="description" content="Earnable" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -44,6 +89,23 @@ export default function Home() {
           </div>
 
           <Image src={Logo} width="80%" height="80%" className={styles.logo} />
+        </div>
+
+        <div className={styles.options} id="options">
+          <div className={styles.button1} onClick={(e) => handleClick(e, "/")}>
+            <HomeIcon className={styles.icon} />
+            <h3>HOME</h3>
+          </div>
+
+          <div className={styles.button1} onClick={(e) => handleClick(e, "/profile")}>
+            <AccountIcon className={styles.icon} />
+            <h3>PROFILE</h3>
+          </div>
+
+          <div className={styles.button1} onClick={(e) => handleClick(e, "/logout")}>
+            <LogoutIcon className={styles.icon} />
+            <h3>LOGOUT</h3>
+          </div>
         </div>
 
         <div className={styles.left}>
